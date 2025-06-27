@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>طبيبك بالعربي</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Arial", sans-serif;
+      text-align: center;
+      background-image: url('your-image.jpg'); /* ✏️ استبدل this بـ اسم صورتك */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+    }
+
+    .top-banner, .bottom-banner {
+      padding: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .top-banner {
+      background-color: #007bff;
+    }
+
+    .bottom-banner {
+      background-color: #fbc02d;
+      color: black;
+    }
+
+    .content {
+      margin-top: 30vh;
+    }
+
+    .lang-buttons button {
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .lang-buttons button:hover {
+      background-color: #218838;
+    }
+
+    @media (max-width: 600px) {
+      .content {
+        margin-top: 20vh;
+      }
+
+      .lang-buttons button {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-banner">🚀 إعلان: احجز استشارتك الآن مع د. نزار بأقل الأسعار!!</div>
+
+  <div class="content">
+    <h2>مرحباً بك في موقع طبيبك بالعربي</h2>
+    <p>اختر لغتك:</p>
+    <div class="lang-buttons">
+      <button onclick="location.href='arabic.html'">العربية</button>
+      <button onclick="location.href='english.html'">English</button>
+    </div>
+  </div>
+
+  <div class="bottom-banner">📝 إعلان دائم: خصم <strong>50%</strong> لأول موعد مع د. نزار!</div>
+
+</body>
+</html>
