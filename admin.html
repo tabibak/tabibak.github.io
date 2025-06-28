@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>لوحة تحكم طبيبك</title>
+  <style>
+    body {
+      margin: 0; font-family: 'Tahoma', sans-serif; background: #f9f9f9; text-align: center;
+    }
+    .login-box, .dashboard {
+      max-width: 400px; margin: 80px auto; background: white; padding: 30px;
+      border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    input[type="password"] {
+      padding: 10px; width: 90%; font-size: 16px; margin-top: 10px;
+    }
+    button {
+      margin-top: 15px; padding: 10px 20px; background: #007bff; border: none;
+      color: white; font-size: 16px; border-radius: 8px; cursor: pointer;
+    }
+    .hidden { display: none; }
+    .card {
+      background: #f0f0f0; padding: 15px; margin: 10px 0; border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+    .card h3 { margin: 5px 0; }
+    .section-title {
+      margin-top: 30px; font-weight: bold; color: #555;
+    }
+    a.button-link {
+      display: inline-block; margin: 5px; padding: 10px 15px; background: #28a745;
+      color: white; text-decoration: none; border-radius: 6px;
+    }
+    .logout {
+      margin-top: 20px;
+      color: red;
+      background: transparent;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شاشة كلمة المرور -->
+  <div class="login-box" id="loginBox">
+    <h2>أدخل كلمة المرور</h2>
+    <input type="password" id="passwordInput" placeholder="••••••••" />
+    <br/>
+    <button onclick="checkPassword()">دخول</button>
+  </div>
+
+  <!-- لوحة التحكم -->
+  <div class="dashboard hidden" id="dashboard">
+    <h2>👋 أهلاً د. نزار</h2>
+
+    <div class="card">
+      <h3>عدد الاستشارات اليوم: <strong>12</strong></h3>
+      <h3>عدد الزوار: <strong>84</strong></h3>
+      <h3>نسبة الموبايل: 78%</h3>
+    </div>
+
+    <div class="section-title">📢 الإعلانات</div>
+    <div class="card">
+      <p>إعلان: احصل على استشارة مجانية لأول مرة!</p>
+      <button>إلغاء الإعلان</button>
+    </div>
+    <button>➕ أضف إعلان جديد</button>
+
+    <div class="section-title">💬 التواصل</div>
+    <a class="button-link" href="https://wa.me/1234567890" target="_blank">واتساب</a>
+    <a class="button-link" href="https://t.me/yourusername" target="_blank">تيليجرام</a>
+
+    <br/>
+    <button class="logout" onclick="logout()">خروج</button>
+  </div>
+
+  <script>
+    const correctPassword = "tabib2025";
+
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      if (input === correctPassword) {
+        document.getElementById("loginBox").classList.add("hidden");
+        document.getElementById("dashboard").classList.remove("hidden");
+      } else {
+        alert("كلمة المرور غير صحيحة");
+      }
+    }
+
+    function logout() {
+      document.getElementById("dashboard").classList.add("hidden");
+      document.getElementById("loginBox").classList.remove("hidden");
+      document.getElementById("passwordInput").value = "";
+    }
+  </script>
+
+</body>
+</html>
